@@ -331,6 +331,13 @@
       background: rgba(246, 211, 101, 0.12);
     }
 
+    .pill-baby {
+      color: #ff9ebb;
+      border-color: rgba(255, 158, 187, 0.45);
+      background: rgba(255, 158, 187, 0.15);
+      box-shadow: 0 0 15px rgba(255, 158, 187, 0.2);
+    }
+
     /* Cake */
     .cake-container {
       position: relative;
@@ -590,8 +597,9 @@
       <p class="subtitle">
         System Alert: A deeply encrypted birthday surprise has been secured. 
         Only the gorgeous girl — <strong style="color: #ff85a1;">Asia Khan</strong> — born on 
-        <strong style="color: #ff85a1;">11 September 2005</strong> and married on 
-        <strong style="color: var(--gold);">14 February 2025</strong> can open it!
+        <strong style="color: #ff85a1;">11 September 2005</strong>, married on 
+        <strong style="color: var(--gold);">14 February 2025</strong>, and carrying our 
+        <strong style="color: #ff9ebb;">7-Month Miracle (Baby Girl Insha'Allah 🎀)</strong> can open it!
       </p>
 
       <div class="heart-scanner" id="heartScanner" 
@@ -612,7 +620,7 @@
 
       <div id="verifiedMsg" style="display: none; margin-top: 15px;">
         <p style="color: #69f0ae; font-weight: 600; font-size: 1.05rem; margin-bottom: 8px;">
-          ✓ Identity Confirmed: Asia Khan — Hazrat Ali's Soulmate & Queen!
+          ✓ Identity Confirmed: Asia Khan — Hazrat Ali's Queen & Future Mama! 🎀
         </p>
         <button class="action-btn" onclick="goToStage(2)">Proceed to Security Clearance ➜</button>
       </div>
@@ -657,11 +665,11 @@
         <!-- Riddle 3 -->
         <div class="mystery-card" id="card3" onclick="unlockCard(3)">
           <div class="mystery-info">
-            <h4>Mystery #3: Who Is Asia Khan?</h4>
-            <p>Define the queen of Hazrat Ali's heart...</p>
+            <h4>Mystery #3: The Greatest Blessing on the Way 🎀</h4>
+            <p>7 Months of carrying our sweetest miracle...</p>
             <div class="revealed-content" id="content3">
-              💖 <strong>"The Most Caring, Loving & Beautiful Wife"</strong><br>
-              Asia, aapki masoom muskurahat, aapka khayal rakhna aur aapka be-shumar pyaar meri dunya hai!
+              🍼 <strong>7 Months Blessed — Baby Girl Insha'Allah!</strong><br>
+              Asia, aap dunya ki sab se caring, loving aur khoobsurat bewi bhi hain, aur humari aane wali nanhi guriya ki sab se pyari mama banne ja rahi hain!
             </div>
           </div>
           <div style="font-size: 1.4rem;" id="badge3">🔒</div>
@@ -675,7 +683,7 @@
 
     <!-- ================= STAGE 3: THE GRAND CELEBRATION ================= -->
     <section class="stage" id="stage3">
-      <div class="badge">👑 HAPPY BIRTHDAY TO MY WIFE</div>
+      <div class="badge">👑 HAPPY BIRTHDAY TO MY WIFE & FUTURE MAMA</div>
       
       <div class="birthday-banner">Happy Birthday!</div>
       <h2 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #fff; margin-bottom: 12px;">
@@ -686,6 +694,7 @@
       <div class="date-tag-row">
         <span class="special-pill pill-dob">🎂 Born: 11 Sept 2005</span>
         <span class="special-pill pill-wedding">💍 Shadi: 14 Feb 2025</span>
+        <span class="special-pill pill-baby">🎀 7 Months Blessed: Baby Girl Insha'Allah 🍼</span>
       </div>
 
       <!-- Interactive 3D Cake -->
@@ -710,22 +719,22 @@
         <div class="trait-card">
           <div class="trait-icon">✨</div>
           <div class="trait-title">So Beautiful</div>
-          <div class="trait-desc">Asia, aapki masoom muskurahat meri dunya ki sab se pyari cheez hai.</div>
+          <div class="trait-desc">Asia, aapki masoom muskurahat Hazrat Ali ki dunya ki sab se pyari cheez hai.</div>
         </div>
         <div class="trait-card">
-          <div class="trait-icon">🌸</div>
-          <div class="trait-title">Pure Caring</div>
-          <div class="trait-desc">Aapka khayal rakhna aur meri fikr karna mere dil ko choo jata hai.</div>
+          <div class="trait-icon">🎀</div>
+          <div class="trait-title">7 Months Mama</div>
+          <div class="trait-desc">Aap humari aane wali nanhi beti ka jis pyaar se khayal rakh rahi hain, I'm so proud of you!</div>
         </div>
         <div class="trait-card">
           <div class="trait-icon">💖</div>
           <div class="trait-title">Endless Loving</div>
-          <div class="trait-desc">Aapka be-laus pyaar meri zindagi ka sab se bada sukoon hai.</div>
+          <div class="trait-desc">Aapka caring aur be-laus pyaar meri zindagi ka sab se bada sukoon hai.</div>
         </div>
         <div class="trait-card">
-          <div class="trait-icon">💍</div>
-          <div class="trait-title">14 Feb 2025</div>
-          <div class="trait-desc">Wo din jab rab ne mujhe meri dunya — Asia Khan — naseeb ki.</div>
+          <div class="trait-icon">👨‍👩‍👧</div>
+          <div class="trait-title">Little Princess</div>
+          <div class="trait-desc">Hazrat Ali + Asia Khan + Baby Girl Insha'Allah! Rab humari choti si dunya ko salamat rakhe.</div>
         </div>
       </div>
 
@@ -737,7 +746,7 @@
       <div class="envelopes-row">
         <button class="envelope-btn active" onclick="showNote(0)">💌 Note 1</button>
         <button class="envelope-btn" onclick="showNote(1)">🌹 Note 2</button>
-        <button class="envelope-btn" onclick="showNote(2)">💖 Note 3</button>
+        <button class="envelope-btn" onclick="showNote(2)">🎀 To Mama</button>
         <button class="envelope-btn" onclick="showNote(3)">💍 My Promise</button>
       </div>
 
@@ -748,10 +757,10 @@
       <!-- Polaroid Memory Frame -->
       <div class="photo-frame-wrapper">
         <div class="photo-frame">
-          <div style="font-size: 3.2rem; margin-bottom: 6px;">👑</div>
+          <div style="font-size: 3rem; margin-bottom: 4px;">👑 🎀</div>
           <h3 style="font-family: 'Playfair Display', serif; font-size: 1.35rem;">Asia Khan</h3>
-          <p style="font-size: 0.85rem; opacity: 0.95; margin-top: 4px;">Hazrat Ali's Beloved Wife</p>
-          <p style="font-size: 0.75rem; opacity: 0.8; margin-top: 2px;">14 Feb 2025 — Forever & Beyond</p>
+          <p style="font-size: 0.85rem; opacity: 0.95; margin-top: 4px;">Hazrat Ali's Beloved Wife & Future Mama</p>
+          <p style="font-size: 0.75rem; opacity: 0.85; margin-top: 2px;">14 Feb 2025 • Expecting Baby Girl 🍼</p>
         </div>
         <div class="frame-caption">Asia Khan — The Most Beautiful Soul ❤️</div>
       </div>
@@ -773,18 +782,23 @@
         </div>
 
         <p>
-          Asia, aap kitni caring hain, kitna pyaar karti hain, aur kitni be-panah khoobsurat hain — 
-          yeh lafz kabhi bayan nahi kar sakte. Meri bas yehi dua hai ke aapki zindagi hamesha muskurahaton, 
-          khushiyon aur sehat se bhari rahe.
+          Aur is saal aapki birthday hum dono ke liye aur bhi zyada muqaddas aur khoobsurat hai, 
+          kyunki aap <strong>7 maheene</strong> se humari aane wali nanhi guriya (baby girl) ko apne dil ke sath mehfooz rakhe hue hain. 
+          Aap sirf meri sab se khoobsurat, caring aur loving bewi nahi, balki humari aane wali beti ki dunya ki sab se behtareen mama banne ja rahi hain.
+        </p>
+
+        <p style="margin-top: 10px;">
+          Dil se dua hai ke Allah Ta'ala aapko aur humari aane wali nanhi beti ko hamesha sehat, tandrusti aur lambi khushiyon bhari zindagi de, 
+          aapke liye har marhaley mein asaani farmaye, aur humare is aashiyaney ko hamesha aabaad rakhe.
         </p>
 
         <p style="margin-top: 14px; text-align: center; color: var(--gold); font-weight: 700;">
-          Aapko aapki Salgirah bohot bohot mubarak ho, meri pyari Asia! Hamesha khush rahein, Aameen ❤️
+          Aapko aapki Salgirah bohot bohot mubarak ho, meri pyari Asia! Happy Birthday to the Best Wife & Future Mama! Aameen ❤️
         </p>
       </div>
 
       <button class="action-btn" onclick="createHeartShower(event)">
-        💖 Send Unlimited Love & Hugs to Asia!
+        💖 Send Unlimited Love & Hugs to Asia & Baby!
       </button>
     </section>
 
@@ -981,9 +995,9 @@
 
     const notes = [
       "11 September 2005 ko Allah Ta'ala ne mere naseeb ka sab se anmol tohfa — Asia Khan — ko is dunya mein bheja tha. ❤️",
-      "Asia, aapka caring aur loving nature meri har thakan aur pareshani door kar deta hai. 🌹",
       "14 February 2025 meri zindagi ka sab se haseen din tha jab aap meri bewi baneen. ✨",
-      "Mera wada hai Asia, har saal aur har lamha aapko izzat, muhabbat aur dunya ki har khushi doonga! 💍"
+      "🎀 To My Beautiful Future Mama: 7 maheene se aap humari nanhi guriya ke liye har thakan muskura kar seh rahi hain. You are my hero! 🍼",
+      "Mera wada hai Asia, main aapka aur humari aane wali baby girl ka hamesha jaan se zyada khayal rakhoonga! 💍👨‍👩‍👧"
     ];
 
     function showNote(idx) {
