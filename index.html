@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>A Top Secret Surprise For My Queen ❤️</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-dark: #08040e;
+      --bg-card: rgba(23, 13, 36, 0.78);
+      --gold: #f6d365;
+      --rose-gold: #fda085;
+      --pink-glow: #ff4d6d;
+      --accent: #ff758c;
+      --text-light: #fff0f3;
+      --text-muted: #c9b1c2;
+      --border-glass: rgba(255, 117, 140, 0.28);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    /* Ambient Backgrounds */
+    #stars-canvas, #fireworks-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+    #fireworks-canvas {
+      z-index: 2;
+    }
+
+    /* Main Container */
+    .experience-container {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 580px;
+      padding: 20px 16px;
+      margin: 0 auto;
+    }
+
+    /* Stage Card */
+    .stage {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      animation: stageEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      background: var(--bg-card);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid var(--border-glass);
+      border-radius: 30px;
+      padding: 34px 22px;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7), 0 0 35px rgba(255, 77, 109, 0.18);
+    }
+
+    .stage.active {
+      display: flex;
+    }
+
+    @keyframes stageEntrance {
+      from {
+        opacity: 0;
+        transform: translateY(35px) scale(0.96);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* Audio Toggle */
+    .audio-pill {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      z-index: 99;
+      background: rgba(22, 12, 35, 0.88);
+      border: 1px solid var(--border-glass);
+      backdrop-filter: blur(12px);
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 0.82rem;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      transition: all 0.3s ease;
+    }
+    .audio-pill:hover {
+      transform: scale(1.05);
+      border-color: var(--gold);
+    }
+
+    /* Badges & Titles */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 16px;
+      background: rgba(255, 77, 109, 0.15);
+      border: 1px solid rgba(255, 77, 109, 0.45);
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #ff85a1;
+      margin-bottom: 18px;
+    }
+
+    h1.glow-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.85rem, 5vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.25;
+      background: linear-gradient(135deg, #ffffff 0%, #fda085 45%, #f6d365 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+      text-shadow: 0 0 25px rgba(253, 160, 133, 0.25);
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      max-width: 440px;
+      margin-bottom: 25px;
+    }
+
+    /* Interactive Buttons */
+    .action-btn {
+      background: linear-gradient(135deg, #ff4d6d 0%, #ff758c 100%);
+      color: white;
+      border: none;
+      outline: none;
+      padding: 14px 34px;
+      border-radius: 50px;
+      font-size: 0.98rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(255, 77, 109, 0.45);
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      margin-top: 15px;
+    }
+
+    .action-btn:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 15px 35px rgba(255, 77, 109, 0.65);
+    }
+
+    .action-btn:active {
+      transform: translateY(1px);
+    }
+
+    /* STAGE 1: Heart Scanner */
+    .heart-scanner {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 77, 109, 0.25) 0%, rgba(255, 77, 109, 0.05) 75%);
+      border: 2px dashed rgba(255, 77, 109, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 25px rgba(255, 77, 109, 0.25);
+      margin: 15px 0 20px;
+    }
+
+    .heart-scanner svg {
+      width: 48px;
+      height: 48px;
+      fill: #ff4d6d;
+      transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .heart-scanner.scanning {
+      border-color: #ff4d6d;
+      animation: pulseGlow 0.9s infinite alternate;
+    }
+
+    .heart-scanner.scanning svg {
+      transform: scale(1.25);
+    }
+
+    @keyframes pulseGlow {
+      from { transform: scale(1); box-shadow: 0 0 20px rgba(255, 77, 109, 0.4); }
+      to { transform: scale(1.08); box-shadow: 0 0 45px rgba(255, 77, 109, 0.85); }
+    }
+
+    .scan-progress {
+      width: 220px;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 10px;
+      overflow: hidden;
+      display: none;
+      margin-bottom: 12px;
+    }
+
+    .scan-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #ff4d6d, #f6d365);
+      border-radius: 10px;
+      transition: width 0.1s linear;
+    }
+
+    /* STAGE 2: Mystery Riddle Cards */
+    .cards-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+      margin: 10px 0 20px;
+    }
+
+    .mystery-card {
+      background: rgba(35, 20, 52, 0.55);
+      border: 1px solid rgba(255, 117, 140, 0.22);
+      border-radius: 18px;
+      padding: 16px 18px;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .mystery-card.unlocked {
+      background: rgba(255, 77, 109, 0.16);
+      border-color: rgba(255, 77, 109, 0.55);
+    }
+
+    .mystery-info h4 {
+      font-size: 0.98rem;
+      color: var(--text-light);
+      margin-bottom: 4px;
+    }
+
+    .mystery-info p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .revealed-content {
+      display: none;
+      margin-top: 10px;
+      font-size: 0.92rem;
+      color: #ffe3ea;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 12px 14px;
+      border-radius: 12px;
+      border-left: 3px solid #ff4d6d;
+      line-height: 1.6;
+    }
+
+    /* STAGE 3: THE CELEBRATION */
+    .birthday-banner {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(3rem, 8.5vw, 4.2rem);
+      color: var(--gold);
+      line-height: 1.1;
+      margin: 8px 0;
+      text-shadow: 0 0 25px rgba(246, 211, 101, 0.5);
+    }
+
+    .date-tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 22px;
+    }
+
+    .special-pill {
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .pill-dob {
+      color: #ff85a1;
+      border-color: rgba(255, 77, 109, 0.35);
+      background: rgba(255, 77, 109, 0.12);
+    }
+
+    .pill-wedding {
+      color: var(--gold);
+      border-color: rgba(246, 211, 101, 0.35);
+      background: rgba(246, 211, 101, 0.12);
+    }
+
+    /* Cake */
+    .cake-container {
+      position: relative;
+      width: 200px;
+      height: 170px;
+      margin: 10px auto 25px;
+      cursor: pointer;
+    }
+
+    .cake-base {
+      position: absolute;
+      bottom: 0;
+      left: 10px;
+      width: 180px;
+      height: 65px;
+      background: linear-gradient(to right, #4c223c, #ff758c, #4c223c);
+      border-radius: 14px 14px 18px 18px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.55);
+    }
+
+    .cake-top {
+      position: absolute;
+      bottom: 55px;
+      left: 30px;
+      width: 140px;
+      height: 50px;
+      background: linear-gradient(to right, #5c2949, #ff8fa3, #5c2949);
+      border-radius: 12px 12px 14px 14px;
+    }
+
+    .cake-frosting {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 16px;
+      background: #ffffff;
+      border-radius: 12px 12px 6px 6px;
+    }
+
+    .candle {
+      position: absolute;
+      bottom: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 12px;
+      height: 42px;
+      background: repeating-linear-gradient(45deg, #fff, #fff 5px, #ff4d6d 5px, #ff4d6d 10px);
+      border-radius: 4px;
+    }
+
+    .flame {
+      position: absolute;
+      top: -22px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 15px;
+      height: 24px;
+      background: radial-gradient(ellipse at bottom, #fff 0%, #f6d365 40%, #ff4d6d 90%);
+      border-radius: 50% 50% 35% 35%;
+      box-shadow: 0 0 20px #f6d365, 0 0 40px #ff4d6d;
+      animation: flicker 0.6s infinite alternate ease-in-out;
+      transform-origin: center bottom;
+      transition: all 0.4s ease;
+    }
+
+    .flame.extinguished {
+      opacity: 0;
+      transform: translateX(-50%) scale(0.2);
+    }
+
+    @keyframes flicker {
+      0% { transform: translateX(-50%) rotate(-2deg) scale(1); }
+      100% { transform: translateX(-50%) rotate(2deg) scale(1.08); }
+    }
+
+    /* 4 Traits Grid */
+    .traits-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      width: 100%;
+      margin: 15px 0 22px;
+    }
+
+    .trait-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 16px;
+      padding: 14px;
+      text-align: center;
+    }
+
+    .trait-icon {
+      font-size: 1.5rem;
+      margin-bottom: 6px;
+    }
+
+    .trait-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 3px;
+    }
+
+    .trait-desc {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* Love Notes */
+    .envelopes-row {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 15px 0 10px;
+    }
+
+    .envelope-btn {
+      background: rgba(255, 77, 109, 0.15);
+      border: 1px solid rgba(255, 77, 109, 0.3);
+      padding: 9px 15px;
+      border-radius: 12px;
+      color: var(--text-light);
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-weight: 600;
+    }
+
+    .envelope-btn.active {
+      background: #ff4d6d;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .love-note-display {
+      background: rgba(18, 9, 28, 0.92);
+      border: 1px solid rgba(246, 211, 101, 0.35);
+      border-radius: 18px;
+      padding: 20px;
+      margin: 12px 0 24px;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #fff1f4;
+      font-style: italic;
+      min-height: 85px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    /* Polaroids & Memory Frame */
+    .photo-frame-wrapper {
+      margin: 10px 0 25px;
+      width: 100%;
+      max-width: 300px;
+      background: white;
+      padding: 12px 12px 42px 12px;
+      border-radius: 6px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.65), 0 0 25px rgba(255, 77, 109, 0.2);
+      transform: rotate(-1.5deg);
+      transition: transform 0.4s ease;
+    }
+    .photo-frame-wrapper:hover {
+      transform: rotate(0deg) scale(1.02);
+    }
+
+    .photo-frame {
+      width: 100%;
+      height: 220px;
+      background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      padding: 15px;
+    }
+
+    .frame-caption {
+      margin-top: 12px;
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.5rem;
+      color: #2b2b2b;
+      text-align: center;
+    }
+
+    /* Final Emotional Love Letter */
+    .final-letter {
+      text-align: left;
+      background: rgba(22, 10, 32, 0.88);
+      border: 1px solid rgba(246, 211, 101, 0.35);
+      border-radius: 20px;
+      padding: 24px;
+      margin: 20px 0;
+      line-height: 1.95;
+      font-size: 1rem;
+      color: #fcebef;
+    }
+
+    .urdu-poetry {
+      text-align: center;
+      font-size: 1.2rem;
+      color: var(--gold);
+      margin: 18px 0;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      line-height: 1.8;
+      border-top: 1px dashed rgba(246, 211, 101, 0.35);
+      border-bottom: 1px dashed rgba(246, 211, 101, 0.35);
+      padding: 12px 0;
+    }
+
+    /* Heart particles */
+    .heart-particle {
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      animation: floatUp 3.2s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+    }
+
+    @keyframes floatUp {
+      0% {
+        opacity: 1;
+        transform: translateY(0) scale(0.6) rotate(0deg);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-200px) scale(1.5) rotate(30deg);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="stars-canvas"></canvas>
+  <canvas id="fireworks-canvas"></canvas>
+
+  <!-- Audio Toggle -->
+  <div class="audio-pill" id="audioToggleBtn" onclick="toggleAudio()">
+    <span id="audioIcon">🎵</span>
+    <span id="audioStatus">Play Melody</span>
+  </div>
+
+  <div class="experience-container">
+
+    <!-- ================= STAGE 1: SUSPENSE VAULT ================= -->
+    <section class="stage active" id="stage1">
+      <div class="badge">🔒 RESTRICTED FOR MY QUEEN</div>
+      <h1 class="glow-title">Top Secret Verification</h1>
+      <p class="subtitle">
+        System Alert: A deeply encrypted birthday surprise has been secured. 
+        Only the gorgeous girl born on <strong style="color: #ff85a1;">11 September 2005</strong> 
+        and married on <strong style="color: var(--gold);">14 February 2025</strong> can open it!
+      </p>
+
+      <div class="heart-scanner" id="heartScanner" 
+           onmousedown="startScan()" onmouseup="stopScan()"
+           ontouchstart="startScan()" ontouchend="stopScan()">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+      </div>
+
+      <div class="scan-progress" id="scanProgress">
+        <div class="scan-bar" id="scanBar"></div>
+      </div>
+
+      <div id="scanLabel" style="font-size: 0.92rem; color: var(--text-muted); font-weight: 500;">
+        Touch & Hold your finger on the heart ❤️
+      </div>
+
+      <div id="verifiedMsg" style="display: none; margin-top: 15px;">
+        <p style="color: #69f0ae; font-weight: 600; font-size: 1.05rem; margin-bottom: 8px;">
+          ✓ Biometric Match: Hazrat Ali's One & Only Begum!
+        </p>
+        <button class="action-btn" onclick="goToStage(2)">Proceed to Security Clearance ➜</button>
+      </div>
+    </section>
+
+    <!-- ================= STAGE 2: THE 3 SUSPENSE RIDDLES ================= -->
+    <section class="stage" id="stage2">
+      <div class="badge">✨ SUSPENSE PROTOCOL</div>
+      <h1 class="glow-title">Wait... A Quick Test!</h1>
+      <p class="subtitle">
+        Before your big surprise is revealed, unlock these 3 mystery memory keys. 
+        Tap each card to decrypt its secret!
+      </p>
+
+      <div class="cards-grid">
+        <!-- Riddle 1 -->
+        <div class="mystery-card" id="card1" onclick="unlockCard(1)">
+          <div class="mystery-info">
+            <h4>Mystery #1: When Did The Light Arrive?</h4>
+            <p>The day the universe was blessed...</p>
+            <div class="revealed-content" id="content1">
+              🎂 <strong>Born: 11 September 2005</strong><br>
+              Wo mubarak din jab Allah ne meri zindagi ki sab se haseen haqeeqat ko is dunya mein bheja!
+            </div>
+          </div>
+          <div style="font-size: 1.4rem;" id="badge1">🔒</div>
+        </div>
+
+        <!-- Riddle 2 -->
+        <div class="mystery-card" id="card2" onclick="unlockCard(2)">
+          <div class="mystery-info">
+            <h4>Mystery #2: Two Souls, One Heart</h4>
+            <p>The date we became Husband & Wife...</p>
+            <div class="revealed-content" id="content2">
+              💍 <strong>14 February 2025</strong><br>
+              Valentine's Day wedding! Wo din jab hum hamesha ke liye ek dusre ke naseeb ban gaye.
+            </div>
+          </div>
+          <div style="font-size: 1.4rem;" id="badge2">🔒</div>
+        </div>
+
+        <!-- Riddle 3 -->
+        <div class="mystery-card" id="card3" onclick="unlockCard(3)">
+          <div class="mystery-info">
+            <h4>Mystery #3: Who Is She?</h4>
+            <p>Define the queen of this heart...</p>
+            <div class="revealed-content" id="content3">
+              💖 <strong>"The Most Caring, Loving & Beautiful Wife"</strong><br>
+              Aapki saadgi, aapki khoobsurati aur aapka pyaar mere liye sab kuch hai!
+            </div>
+          </div>
+          <div style="font-size: 1.4rem;" id="badge3">🔒</div>
+        </div>
+      </div>
+
+      <button class="action-btn" id="revealSurpriseBtn" style="display: none;" onclick="triggerGrandReveal()">
+        ✨ REVEAL MY SURPRISE NOW! ✨
+      </button>
+    </section>
+
+    <!-- ================= STAGE 3: THE GRAND CELEBRATION ================= -->
+    <section class="stage" id="stage3">
+      <div class="badge">👑 HAPPY BIRTHDAY TO MY WIFE</div>
+      
+      <div class="birthday-banner">Happy Birthday!</div>
+      <h2 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #fff; margin-bottom: 12px;">
+        Meri Pyari Begum Jaan ❤️
+      </h2>
+
+      <!-- Special Tags -->
+      <div class="date-tag-row">
+        <span class="special-pill pill-dob">🎂 Born: 11 Sept 2005</span>
+        <span class="special-pill pill-wedding">💍 Shadi: 14 Feb 2025</span>
+      </div>
+
+      <!-- Interactive 3D Cake -->
+      <div class="cake-container" onclick="blowCandle()">
+        <div class="candle">
+          <div class="flame" id="cakeFlame"></div>
+        </div>
+        <div class="cake-top">
+          <div class="cake-frosting"></div>
+        </div>
+        <div class="cake-base">
+          <div class="cake-frosting"></div>
+        </div>
+      </div>
+
+      <p id="blowText" style="font-size: 0.95rem; color: var(--gold); font-weight: 600; margin-bottom: 20px;">
+        🕯️ Tap on the candle to make a wish and blow it out!
+      </p>
+
+      <!-- 4 Pillars of Her -->
+      <div class="traits-grid">
+        <div class="trait-card">
+          <div class="trait-icon">✨</div>
+          <div class="trait-title">So Beautiful</div>
+          <div class="trait-desc">Aapki masoom muskurahat meri dunya ki sab se pyari cheez hai.</div>
+        </div>
+        <div class="trait-card">
+          <div class="trait-icon">🌸</div>
+          <div class="trait-title">Pure Caring</div>
+          <div class="trait-desc">Aapka khayal rakhna aur meri fikr karna mere dil ko choo jata hai.</div>
+        </div>
+        <div class="trait-card">
+          <div class="trait-icon">💖</div>
+          <div class="trait-title">Endless Loving</div>
+          <div class="trait-desc">Aapka be-laus pyaar meri zindagi ka sab se bada sahara hai.</div>
+        </div>
+        <div class="trait-card">
+          <div class="trait-icon">💍</div>
+          <div class="trait-title">14 Feb 2025</div>
+          <div class="trait-desc">Wo din jab rab ne mujhe mera naseeb aur meri dunya de di.</div>
+        </div>
+      </div>
+
+      <!-- Secret Envelopes -->
+      <p style="font-size: 0.95rem; color: var(--gold); margin-top: 10px; font-weight: 600;">
+        💌 Tap an envelope to read a secret note:
+      </p>
+      
+      <div class="envelopes-row">
+        <button class="envelope-btn active" onclick="showNote(0)">💌 Note 1</button>
+        <button class="envelope-btn" onclick="showNote(1)">🌹 Note 2</button>
+        <button class="envelope-btn" onclick="showNote(2)">💖 Note 3</button>
+        <button class="envelope-btn" onclick="showNote(3)">💍 My Promise</button>
+      </div>
+
+      <div class="love-note-display" id="noteDisplay">
+        "11 September 2005 ko Allah Ta'ala ne mere naseeb ka sab se anmol tohfa is dunya mein bheja tha."
+      </div>
+
+      <!-- Polaroid Memory Frame -->
+      <div class="photo-frame-wrapper">
+        <div class="photo-frame">
+          <div style="font-size: 3.2rem; margin-bottom: 6px;">👑</div>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem;">Hazrat Ali's Queen</h3>
+          <p style="font-size: 0.82rem; opacity: 0.9; margin-top: 4px;">14 Feb 2025 — Forever & Beyond</p>
+        </div>
+        <div class="frame-caption">The Most Beautiful Soul ❤️</div>
+      </div>
+
+      <!-- Final Deep Letter -->
+      <div class="final-letter">
+        <h3 style="font-family: 'Playfair Display', serif; color: var(--gold); margin-bottom: 12px; text-align: center;">
+          Dil Se Likha Ek Paigham... 🌹
+        </h3>
+        <p>
+          Meri jaan, meri pyari bewi... Aaj ka din mere liye dunya ka sab se khas din hai. 
+          Kyunki aaj <strong>11 September</strong> ko aap is dunya mein aayi theen. 
+          Aur phir <strong>14 February 2025</strong> ko Allah Ta'ala ne aapko meri zindagi ka hamesha ke liye hissa bana diya.
+        </p>
+        
+        <div class="urdu-poetry">
+          "Aap meri zindagi ka wo haseen tohfa ho,<br>
+          Jise dekh kar har roz rab ka shukar ada karta hoon."
+        </div>
+
+        <p>
+          Aap kitni caring hain, kitna pyaar karti hain, aur kitni be-panah khoobsurat hain — 
+          yeh lafz kabhi bayan nahi kar sakte. Meri bas yehi dua hai ke aapki zindagi hamesha muskurahaton, 
+          khushiyon aur sehat se bhari rahe.
+        </p>
+
+        <p style="margin-top: 14px; text-align: center; color: var(--gold); font-weight: 700;">
+          Aapko aapki Salgirah bohot bohot mubarak ho, meri pyari begum! Hamesha khush rahein, Aameen ❤️
+        </p>
+      </div>
+
+      <button class="action-btn" onclick="createHeartShower(event)">
+        💖 Send Unlimited Love & Hugs!
+      </button>
+    </section>
+
+  </div>
+
+  <script>
+    /* ================= AUDIO ENGINE (Web Audio API) ================= */
+    let audioCtx = null;
+    let isMusicPlaying = false;
+    let musicInterval = null;
+
+    function initAudio() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+    }
+
+    function playBeep(freq, type = 'sine', duration = 0.15) {
+      try {
+        initAudio();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        gain.gain.setValueAtTime(0.12, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
+      } catch (e) {}
+    }
+
+    function playHeartbeat() {
+      try {
+        initAudio();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(65, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(40, audioCtx.currentTime + 0.18);
+        gain.gain.setValueAtTime(0.25, audioCtx.currentTime);
+        gain.gain.linearRampToValueAtTime(0.01, audioCtx.currentTime + 0.18);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.18);
+      } catch (e) {}
+    }
+
+    const melodyNotes = [
+      261.63, 261.63, 293.66, 261.63, 349.23, 329.63,
+      261.63, 261.63, 293.66, 261.63, 392.00, 349.23,
+      261.63, 261.63, 523.25, 440.00, 349.23, 329.63, 293.66,
+      466.16, 466.16, 440.00, 349.23, 392.00, 349.23
+    ];
+    let noteIdx = 0;
+
+    function playMelodyStep() {
+      if (!isMusicPlaying) return;
+      try {
+        initAudio();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'triangle';
+        const freq = melodyNotes[noteIdx % melodyNotes.length];
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.55);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.55);
+        noteIdx++;
+      } catch (e) {}
+    }
+
+    function toggleAudio() {
+      initAudio();
+      const status = document.getElementById('audioStatus');
+      const icon = document.getElementById('audioIcon');
+
+      if (!isMusicPlaying) {
+        isMusicPlaying = true;
+        status.innerText = "Music On";
+        icon.innerText = "🔊";
+        musicInterval = setInterval(playMelodyStep, 500);
+      } else {
+        isMusicPlaying = false;
+        status.innerText = "Play Melody";
+        icon.innerText = "🎵";
+        clearInterval(musicInterval);
+      }
+    }
+
+    /* ================= STAGE FLOW ================= */
+    function goToStage(stageNum) {
+      document.querySelectorAll('.stage').forEach(el => el.classList.remove('active'));
+      const nextStage = document.getElementById('stage' + stageNum);
+      if (nextStage) {
+        nextStage.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    /* ================= STAGE 1: SCANNER ================= */
+    let scanTimer = null;
+    let scanPercent = 0;
+    const scanner = document.getElementById('heartScanner');
+    const scanBar = document.getElementById('scanBar');
+    const scanProgress = document.getElementById('scanProgress');
+    const scanLabel = document.getElementById('scanLabel');
+    const verifiedMsg = document.getElementById('verifiedMsg');
+
+    function startScan() {
+      initAudio();
+      scanPercent = 0;
+      scanner.classList.add('scanning');
+      scanProgress.style.display = 'block';
+      scanBar.style.width = '0%';
+      scanLabel.innerText = "Verifying Heartbeat & Marriage ID...";
+
+      scanTimer = setInterval(() => {
+        scanPercent += 4;
+        scanBar.style.width = scanPercent + '%';
+        if (scanPercent % 20 === 0) {
+          playHeartbeat();
+        }
+
+        if (scanPercent >= 100) {
+          clearInterval(scanTimer);
+          scanner.classList.remove('scanning');
+          playBeep(880, 'triangle', 0.4);
+          scanLabel.innerText = "✨ Confirmed: Hazrat Ali's Queen (14 Feb 2025) ✨";
+          verifiedMsg.style.display = 'block';
+        }
+      }, 70);
+    }
+
+    function stopScan() {
+      if (scanPercent < 100) {
+        clearInterval(scanTimer);
+        scanner.classList.remove('scanning');
+        scanBar.style.width = '0%';
+        scanProgress.style.display = 'none';
+        scanLabel.innerText = "Hold until verification reaches 100% ❤️";
+      }
+    }
+
+    /* ================= STAGE 2: MYSTERY RIDDLES ================= */
+    let unlockedCards = new Set();
+
+    function unlockCard(num) {
+      const card = document.getElementById('card' + num);
+      const content = document.getElementById('content' + num);
+      const badge = document.getElementById('badge' + num);
+
+      playBeep(520 + num * 100, 'sine', 0.2);
+
+      if (!unlockedCards.has(num)) {
+        unlockedCards.add(num);
+        card.classList.add('unlocked');
+        content.style.display = 'block';
+        badge.innerText = '🔓';
+      }
+
+      if (unlockedCards.size === 3) {
+        document.getElementById('revealSurpriseBtn').style.display = 'inline-block';
+      }
+    }
+
+    function triggerGrandReveal() {
+      playBeep(784, 'triangle', 0.5);
+      launchFireworks();
+      if (!isMusicPlaying) toggleAudio();
+      goToStage(3);
+    }
+
+    /* ================= STAGE 3: CAKE & NOTES ================= */
+    let candleBlown = false;
+    function blowCandle() {
+      if (candleBlown) return;
+      candleBlown = true;
+      const flame = document.getElementById('cakeFlame');
+      flame.classList.add('extinguished');
+      document.getElementById('blowText').innerHTML = "✨ <strong>Masha'Allah! May Allah protect our bond and bless you forever, Aameen!</strong> ✨";
+      playBeep(659.25, 'sine', 0.3);
+      setTimeout(() => playBeep(880, 'triangle', 0.6), 250);
+      launchFireworks();
+    }
+
+    const notes = [
+      "11 September 2005 ko Allah Ta'ala ne mere naseeb ka sab se anmol tohfa is dunya mein bheja tha. ❤️",
+      "Aapka caring aur loving nature meri har thakan aur pareshani door kar deta hai. 🌹",
+      "14 February 2025 meri zindagi ka sab se khoobsurat din tha jab aap meri bewi baneen. ✨",
+      "Mera wada hai, har saal aur har lamha aapko izzat, muhabbat aur dunya ki har khushi doonga! 💍"
+    ];
+
+    function showNote(idx) {
+      playBeep(440 + idx * 80, 'sine', 0.15);
+      document.querySelectorAll('.envelope-btn').forEach((btn, i) => {
+        btn.classList.toggle('active', i === idx);
+      });
+      document.getElementById('noteDisplay').innerText = notes[idx];
+    }
+
+    function createHeartShower(e) {
+      playBeep(880, 'sine', 0.2);
+      for (let i = 0; i < 20; i++) {
+        const heart = document.createElement('div');
+        heart.className = 'heart-particle';
+        heart.innerHTML = ['❤️', '💖', '🌹', '✨', '💕', '🥰'][Math.floor(Math.random() * 6)];
+        heart.style.left = (Math.random() * 90 + 5) + 'vw';
+        heart.style.bottom = '20px';
+        heart.style.fontSize = (Math.random() * 20 + 20) + 'px';
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 3200);
+      }
+    }
+
+    /* ================= CANVAS PARTICLES ================= */
+    const starsCanvas = document.getElementById('stars-canvas');
+    const sCtx = starsCanvas.getContext('2d');
+    let stars = [];
+
+    function resizeCanvas() {
+      starsCanvas.width = window.innerWidth;
+      starsCanvas.height = window.innerHeight;
+      stars = [];
+      for (let i = 0; i < 75; i++) {
+        stars.push({
+          x: Math.random() * starsCanvas.width,
+          y: Math.random() * starsCanvas.height,
+          size: Math.random() * 2,
+          speed: Math.random() * 0.02 + 0.005,
+          alpha: Math.random()
+        });
+      }
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function animateStars() {
+      sCtx.clearRect(0, 0, starsCanvas.width, starsCanvas.height);
+      stars.forEach(s => {
+        s.alpha += s.speed;
+        const opacity = (Math.sin(s.alpha) + 1) / 2;
+        sCtx.fillStyle = `rgba(255, 230, 240, ${opacity * 0.8})`;
+        sCtx.beginPath();
+        sCtx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+        sCtx.fill();
+      });
+      requestAnimationFrame(animateStars);
+    }
+    animateStars();
+
+    const fwCanvas = document.getElementById('fireworks-canvas');
+    const fCtx = fwCanvas.getContext('2d');
+    let particles = [];
+
+    function resizeFw() {
+      fwCanvas.width = window.innerWidth;
+      fwCanvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeFw);
+    resizeFw();
+
+    function launchFireworks() {
+      const colors = ['#ff4d6d', '#f6d365', '#fda085', '#69f0ae', '#ffffff', '#ff758c'];
+      for (let b = 0; b < 4; b++) {
+        const originX = Math.random() * (fwCanvas.width * 0.8) + (fwCanvas.width * 0.1);
+        const originY = Math.random() * (fwCanvas.height * 0.45) + 60;
+        for (let i = 0; i < 45; i++) {
+          const angle = Math.random() * Math.PI * 2;
+          const speed = Math.random() * 4.5 + 1.5;
+          particles.push({
+            x: originX,
+            y: originY,
+            vx: Math.cos(angle) * speed,
+            vy: Math.sin(angle) * speed,
+            color: colors[Math.floor(Math.random() * colors.length)],
+            alpha: 1,
+            decay: Math.random() * 0.016 + 0.01
+          });
+        }
+      }
+    }
+
+    function animateFireworks() {
+      fCtx.clearRect(0, 0, fwCanvas.width, fwCanvas.height);
+      for (let i = particles.length - 1; i >= 0; i--) {
+        const p = particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += 0.04;
+        p.alpha -= p.decay;
+
+        if (p.alpha <= 0) {
+          particles.splice(i, 1);
+        } else {
+          fCtx.fillStyle = p.color;
+          fCtx.globalAlpha = p.alpha;
+          fCtx.beginPath();
+          fCtx.arc(p.x, p.y, 2.5, 0, Math.PI * 2);
+          fCtx.fill();
+          fCtx.globalAlpha = 1;
+        }
+      }
+      requestAnimationFrame(animateFireworks);
+    }
+    animateFireworks();
+  </script>
+</body>
+</html>
